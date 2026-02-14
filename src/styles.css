@@ -1,0 +1,188 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.panel {
+  width: min(920px, 100%);
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.header-row p {
+  color: #475569;
+  margin-top: 0.25rem;
+}
+
+.month-filter,
+.entry-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+select,
+input,
+button {
+  font: inherit;
+}
+
+select,
+input {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  background: white;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.summary-grid article {
+  background: #f1f5f9;
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+}
+
+.value {
+  margin-top: 0.35rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.positive {
+  color: #15803d;
+}
+
+.negative {
+  color: #b91c1c;
+}
+
+.entry-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+button {
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1rem;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.entry-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.7rem;
+}
+
+.entry-description {
+  font-weight: 600;
+}
+
+.entry-date {
+  margin-top: 0.2rem;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.pill.income {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill.expense {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 1rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.7rem;
+}
+
+@media (max-width: 760px) {
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .summary-grid,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+  }
+}
